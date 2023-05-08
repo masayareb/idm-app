@@ -1,2 +1,28 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<%= render "shared/header" %>
+
+<div class='item-contents'>
+  <div class='title'>
+    ユーザ管理機器一覧
+  </div>
+
+  <ul>
+    <%# @items.each do |item| %>
+      <li class='list'>
+      <%#= link_to item_path(item.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%#= item.item %>
+          </h3>
+          <div class='item-status'>
+            <%#= item.status %>
+          </div>
+          <div class='item-category'>
+            <%#= item.category %>
+          </div>
+        </div>
+      <%# end %>
+      </li>
+    <%# end %>
+  </ul>
+  
+</div>

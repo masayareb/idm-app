@@ -9,7 +9,7 @@
 | email              | string  | null: false,unique: true | #メールアドレス
 | employee_number    | string  | null: false,unique: true | #社員番号
 | affiliation        | string  | null: false              | #所属
-| admin              | boolean | null: false              | #管理者ユーザ判定
+| admin              | boolean | null: false,null: false  | #管理者ユーザ判定
 
 ### Association
 

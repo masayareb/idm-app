@@ -4,6 +4,11 @@
   <div class='title'>
     ユーザ管理機器一覧
   </div>
+  <%# 下部ボタン %>
+  <div class="item-new-register">
+    <%=link_to '機器を登録する', new_item_path, class:"item-new-register-btn" %>
+  </div>
+  <%# /下部ボタン %>
 
   <ul>
     <%# @items.each do |item| %>

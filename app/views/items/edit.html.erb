@@ -1,0 +1,82 @@
+<%= form_with model: @item, local: true do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
+
+  <div class="new-items">
+    <div class="items-detail">
+      <div class="weight-bold-text">商品の詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          状態
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+
+    <div class="weight-bold-text">
+      商品名
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :item, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+
+    <div class="weight-bold-text">
+      メーカー名
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :manufacturer, class:"items-manufacturer", id:"item-manufacturer", placeholder:"DELL,HPなど" ,maxlength:"20" %>
+
+    <div class="weight-bold-text">
+      IPアドレス
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :ip, class:"items-ip", id:"item-ip", placeholder:"入力例:xxx.xxx.xxx.xxx"%>
+
+    <div class="weight-bold-text">
+      S/N
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :serial_number, class:"items-serial_number", id:"item-serial_number", placeholder:"英数字のみ" ,maxlength:"20" %>
+
+    <div class="weight-bold-text">
+      購入年月
+      <span class="indispensable">必須（半角数字のみ）</span>
+    </div>
+    <%= f.date_field :purchase_date, class:"items-purchase_date", id:"item-purchase_date" %>
+
+    <div class="weight-bold-text">
+      利用予定年数
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :years_of_use, class:"items-years_of_use", id:"item-years_of_use" ,maxlength:"2" %><span>年</span>
+
+    <div class="weight-bold-text">
+      備考
+    </div>
+    <%= f.text_area :remarks, class:"items-remarks", id:"item-remarks", placeholder:"備考（200文字まで)", maxlength:"200" %>
+  </div>
+
+  <div class="img-upload">
+    <div class="weight-bold-text">
+      ファイル添付
+      <span class="indispensable">任意</span>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image, id:"item-file" %>
+    </div>
+  </div>
+
+
+  <%# 下部ボタン %>
+  <div class="sell-btn-contents">
+    <%= f.submit "登録する" ,class:"sell-btn" %><br>
+    <%=link_to 'もどる', item_path(@item.id), class:"back-btn" %>
+  </div>
+<% end %>

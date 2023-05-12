@@ -15,11 +15,11 @@
       <% if user_signed_in? && current_user.id == item.user_id %>
         <li class='list'>
           <div class='item-info'>
-            <%#= link_to item_path(item.id) do %>
+            <%= link_to item_path(item.id) do %>
               <h3 class='item-name'>
                 <%= item.item %>
               </h3>
-            <%# end %>
+            <% end %>
             <div class='item-status'>
               機器ID:  <%= item.id %>
             </div>

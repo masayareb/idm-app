@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      id:<%= @item.id %>
+      機器名:<%= @item.item %>
+      設置場所:<%= @item.user.affiliation %>
+    </h2>
+  </div>
+  <div class="item-box">
+    <div class="item-category">
+      カテゴリ：<%= @item.category.name %>
+    </div>
+    <div class="item-status">
+      ステータス：<%= @item.status.name %>
+    </div>
+    <div class="item-manufacturer">
+      メーカー：<%= @item.manufacturer %>
+    </div>
+    <div class="item-serial-number">
+      S/N：<%= @item.serial_number %>
+    </div>
+    <div class="item-ip">
+      IPアドレス：<%= @item.ip %>
+    </div>
+    <div class="item-purchase-date">
+      購入年月：<%= @item.purchase_date %>
+    </div>
+    <div class="item-years-of-use">
+      利用予定年数：<%= @item.years_of_use %>
+    </div>
+    <div class="item-remarks">
+      備考：<%= @item.remarks %>
+    </div>
+    <div class="item-img-content">
+      <%= link_to "添付ファイル", url_for(@item.image) %>
+    </div>
+  </div>
+  <%=link_to 'もどる', root_path, class:"back-btn" %>
+</div>

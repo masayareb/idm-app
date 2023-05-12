@@ -11,23 +11,37 @@
   <%# /下部ボタン %>
 
   <ul>
-    <%# @items.each do |item| %>
-      <li class='list'>
-      <%#= link_to item_path(item.id) do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%#= item.item %>
-          </h3>
-          <div class='item-status'>
-            <%#= item.status %>
+    <% @items.each do |item| %>
+      <% if user_signed_in? && current_user.id == item.user_id %>
+        <li class='list'>
+          <div class='item-info'>
+            <%#= link_to item_path(item.id) do %>
+              <h3 class='item-name'>
+                <%= item.item %>
+              </h3>
+            <%# end %>
+            <div class='item-status'>
+              機器ID:  <%= item.id %>
+            </div>
+            <div class='item-status'>
+              利用状況：  <%= item.status.name %>
+            </div>
+            <div class='item-category'>
+              機器種類：  <%= item.category.name %>
+            </div>
+            <div class='item-affiliation'>
+              設置先:  <%= item.user.affiliation %>
+            </div>
+            <div class='item-purchase-date'>
+              購入年月:  <%= item.purchase_date %>
+            </div>
+            <div class='item-category'>
+              利用予定年数:  <%= item.years_of_use %>
+            </div>
           </div>
-          <div class='item-category'>
-            <%#= item.category %>
-          </div>
-        </div>
-      <%# end %>
+      <% end %>
       </li>
-    <%# end %>
+    <% end %>
   </ul>
   
 </div>

@@ -11,9 +11,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-
   end
-
+  
   def create 
     @item = Item.create(item_params)
     if  @item.save

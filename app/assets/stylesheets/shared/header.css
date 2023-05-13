@@ -77,19 +77,7 @@
 }
 
 .category-list {
-  text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
-}
-
-.list-hover:hover {
-  color:#0033cc;
-  font-weight :bold;
-  }
-
-.brand-list {
-  text-decoration: none;
-  color: #333333;
 }
 
 .lists-right {
@@ -102,23 +90,19 @@
 .user-name {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
   font-weight: bold;
 }
 
 
 .logout {
   text-decoration: none;
-  color: #333333;
 }
 
 .login {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
 }
 
 .sign-up {
   text-decoration: none;
-  color: #333333;
 }

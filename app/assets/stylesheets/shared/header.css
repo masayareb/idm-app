@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .top-page-header {
@@ -15,26 +16,41 @@
   align-items: center;
 }
 
-.furima-icon {
-  width: 10vw;
-  margin-right: 10vw;
+.idm-icon {
+  width: 6vw;
+}
+
+.app-title{
+  font-size: 18px;
+  color:  rgb(58, 210, 87);
+  width: 8vw;
+  margin-right: 2vw;
+}
+
+.title-content{
+  font-size: 18px;
+}
+
+.title-message{
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .search-form {
-  width: 65vw;
-  height: 5vh;
+  width: 60vw;
+  height: 6vh;
   display: flex;
   margin-bottom: 5px;
 }
 
 .search-form>.input-box {
   width: 100%;
-  height: 5vh;
+  height: 6vh;
   padding-left: 10px;
 }
 
 .search-button {
-  width: 5vh;
+  width: 6vh;
   border: 0;
   cursor: pointer;
   background-color: #3ccace;
@@ -51,7 +67,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0;
+  padding: 3vh 0;
 }
 
 .lists-left {
@@ -66,6 +82,11 @@
   color: #333333;
 }
 
+.list-hover:hover {
+  color:#0033cc;
+  font-weight :bold;
+  }
+
 .brand-list {
   text-decoration: none;
   color: #333333;
@@ -78,7 +99,7 @@
 }
 
 
-.user-nickname {
+.user-name {
   text-decoration: none;
   margin-right: 3vw;
   color: #333333;

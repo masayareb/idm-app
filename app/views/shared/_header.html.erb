@@ -19,16 +19,16 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list list-hover" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list list-hover" %></li>
+      <li><%= link_to 'カテゴリー', "#", class: "category-list list-hover btn-style" %></li>
+      <li><%= link_to '状態', "#", class: "brand-list list-hover btn-style" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.name, edit_user_registration_path, class: "user-name list-hover" %></li> 
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout list-hover" %></li> 
+        <li><%= link_to current_user.name, edit_user_registration_path, class: "user-name list-hover btn-style" %></li> 
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout list-hover btn-style" %></li> 
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login list-hover" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up list-hover" %></li>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login list-hover btn-style" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up list-hover btn-style" %></li>
       <% end %>
     </ul>
   </div>

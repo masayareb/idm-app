@@ -17,3 +17,19 @@
  * {
   box-sizing: border-box;
 }
+
+.list-hover:hover {
+  color:#0033cc;
+  font-weight :bold;
+  }
+
+.btn-style{
+  background-color:rgb(58, 210, 87);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+}

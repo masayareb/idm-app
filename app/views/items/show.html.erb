@@ -2,53 +2,71 @@
 
 <div class="item-show">
   <div class="item-box">
-    <h2 class="name">
-      id:<%= @item.id %>
-      機器名:<%= @item.item %>
-      設置場所:<%= @item.user.affiliation %>
-    </h2>
-  </div>
+    <h2 class="items-title">機器情報詳細</h2>  
 
-  <% if user_signed_in? && current_user.id == @item.user_id %>
-    <%= link_to "商品の編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
-    <p class="or-text">or</p>
-    <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
-  <% end %>
-  
-  <div class="item-box">
-    <div class="item-category">
-      カテゴリ：<%= @item.category.name %>
-    </div>
-    <div class="item-status">
-      ステータス：<%= @item.status.name %>
-    </div>
-    <div class="item-manufacturer">
-      メーカー：<%= @item.manufacturer %>
-    </div>
-    <div class="item-serial-number">
-      S/N：<%= @item.serial_number %>
-    </div>
-    <div class="item-ip">
-      IPアドレス：<%= @item.ip %>
-    </div>
-    <div class="item-purchase-date">
-      購入年月：<%= @item.purchase_date %>
-    </div>
-    <div class="item-years-of-use">
-      利用予定年数：<%= @item.years_of_use %>
-    </div>
-    <div class="item-remarks">
-      備考：<%= @item.remarks %>
-    </div>
+    <table>
+      <tr>
+        <th>機器ID</th>
+        <td><%= @item.id %></td>
+      </tr>
+      <tr>
+        <th>設置場所</th>
+        <td><%= @item.user.affiliation %></td>
+      </tr>
+      <tr>
+        <th>機器名</th>
+        <td><%= @item.item %></td>
+      </tr>
+        <tr>
+        <th>カテゴリ</th>
+        <td><%= @item.category.name %></td>
+      </tr>
+      <tr>
+        <th>ステータス</th>
+        <td><%= @item.status.name %></td>
+      </tr>
+      <tr>
+        <th>メーカー</th>
+        <td><%= @item.manufacturer %></td>
+      </tr>
+      <tr>
+        <th>S/N</th>
+        <td><%= @item.serial_number %></td>
+      </tr>
+      <tr>
+        <th>IPアドレス</th>
+        <td><%= @item.ip %></td>
+      </tr>
+      <tr>
+        <th>購入年月</th>
+        <td><%= @item.purchase_date %></td>
+      </tr>
+      <tr>
+        <th>利用予定年数</th>
+        <td><%= @item.years_of_use %></td>
+      </tr>
+      <tr>
+        <th>備考</th>
+        <td><%= @item.remarks %></td>
+      </tr>
+      <tr>
+        <th>添付ファイル</th>
+        <td>      
+          <% if @item.image.attached? %>
+            <%= link_to @item.image.filename, url_for(@item.image) %>
+          <% else %>
+            ファイルが存在しません
+          <% end %>
+        </td>
+    </table>
     
-    <div class="item-img-content">
-      <% if @item.image.attached? %>
-        <%= link_to @item.image.filename, url_for(@item.image) %>
-      <% else %>
-        ファイルが存在しません
-      <% end %>
-    </div>
-    
+    <div class='item-show-supplement'>※設置場所についてはユーザの所属をご変更ください</div>
+
+    <% if user_signed_in? && current_user.id == @item.user_id %>
+      <%= link_to "機器情報の編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+      <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
+    <% end %>
+
   </div>
   <%=link_to 'もどる', root_path, class:"back-btn" %>
 </div>

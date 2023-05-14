@@ -1,0 +1,122 @@
+/* border-bottom: 1px solid #eee; */
+.items-register-form {
+  background-color: #FFF;
+  width: 100vw;
+  padding: 2vh 15vw;
+}
+
+
+.items-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 共通 */
+.indispensable {
+  background: rgb(58, 210, 87);
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.Arbitrary{
+  background:#aaa;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin: 15px 0;
+}
+
+.select-box {
+  height: 30px;
+  background-color: #f5f5f5;
+  padding-left: 10px;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+
+/* 商品名と商品説明 */
+.new-items {
+  padding: 2vh 18vw;
+}
+
+.items-input-contents{
+  display: flex;
+  align-items: center;
+}
+
+.items-text {
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  font-size: 16px;
+  resize: none;
+}
+.items-number{
+  height: 30px;
+  width: 50px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  font-size: 16px;
+  resize: none;
+}
+
+.items-text-area{
+  height: 90px;
+  width: 350px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  font-size: 16px;
+  resize: none;
+}
+
+.items-explain {
+  margin-top: 2vh;
+}
+
+.select-box {
+  margin: 2vh 0;
+}
+
+
+/* 下部ボタン */
+.input-btn-contents {
+  width: 100%;
+  text-align: center;
+}
+
+.input-btn {
+  background: rgb(58, 210, 87);
+  border: 1px solid rgb(58, 210, 87);
+  color: #fff;
+  width: 50%;
+  height: 50px;
+  font-size: 14px;
+  margin-bottom: 4vh;
+}
+
+.back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 23%;
+  text-decoration: none;
+}
+
+

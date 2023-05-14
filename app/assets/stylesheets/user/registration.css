@@ -1,0 +1,54 @@
+.registration-main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.edit-user-title{
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.input-default{
+  width: 300px;
+  height: 30px;
+}
+
+.register-btn {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.field{
+  margin-bottom: 10px;
+}
+
+.register-red-btn {
+  width: 100%;
+  background: rgb(58, 210, 87);
+  border: 1px solid rgb(58, 210, 87);
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+
+.new-user-title{
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.form-text-wrap{
+  margin: 10px 0;
+}
+
+.new-user-register-btn{
+  margin-top: 15px;
+}

@@ -1,47 +1,77 @@
 <%= render "shared/header" %>
 
 <div class='item-contents'>
-  <div class='title'>
-    ユーザ管理機器一覧
+  <div class='item-contents-top'>
+    <div class='title-index'>
+      ユーザ管理機器一覧
+    </div>
+    <div class="item-new-register">
+      <%=link_to '新規機器登録', new_item_path,class:'list-hover btn-style' %>
+    </div>
   </div>
-  <%# 下部ボタン %>
-  <div class="item-new-register">
-    <%=link_to '機器を登録する', new_item_path, class:"item-new-register-btn" %>
-  </div>
-  <%# /下部ボタン %>
 
-  <ul>
-    <% @items.each do |item| %>
-      <% if user_signed_in? && current_user.id == item.user_id %>
-        <li class='list'>
-          <div class='item-info'>
-            <%= link_to item_path(item.id) do %>
-              <h3 class='item-name'>
-                <%= item.item %>
-              </h3>
-            <% end %>
-            <div class='item-status'>
-              機器ID:  <%= item.id %>
-            </div>
-            <div class='item-status'>
-              利用状況：  <%= item.status.name %>
-            </div>
-            <div class='item-category'>
-              機器種類：  <%= item.category.name %>
-            </div>
-            <div class='item-affiliation'>
-              設置先:  <%= item.user.affiliation %>
-            </div>
-            <div class='item-purchase-date'>
-              購入年月:  <%= item.purchase_date %>
-            </div>
-            <div class='item-category'>
-              利用予定年数:  <%= item.years_of_use %>
-            </div>
+
+
+  <table>
+  <thead>
+    <tr>
+      <th>機器id</th>
+      <th>利用状況</th>
+      <th>機器種類</th>
+      <th>機器名</th>
+      <th>設置先</th>
+      <th>購入年月</th>
+      <th>利用予定年数</th>
+    </tr>
+  </thead>
+  <% @items.each do |item| %>
+    <% if user_signed_in? && current_user.id == item.user_id %>
+  <tbody>
+    <tr>
+      <td>
+          <%= link_to item_path(item.id) do %>
+          <div class='item-id list-hover'>
+            <%= item.id %>
           </div>
-      <% end %>
-      </li>
+          <% end %>
+        </div>
+      </td>
+      <td>
+        <div class='item-status'>
+          <%= item.status.name %>
+        </div>
+      </td>
+      <td>
+        <div class='item-category'>
+          <%= item.category.name %>
+        </div>
+      </td>
+      <td>
+        <div class='item-name'>
+          <%= item.item %>
+        </div>
+      </td>
+      <td>
+        <div class='item-affiliation'>
+          <%= item.user.affiliation %>
+        </div>
+      </td>
+      <td>
+        <div class='item-purchase-date'>
+          <%= item.purchase_date %>
+        </div>
+      </td>
+      <td>
+        <div class='item-years-of-use'>
+          <%= item.years_of_use %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
     <% end %>
-  </ul>
+  <% end %>
+</table>
+<div class='item-list-supplement'>※機器idをクリックすると機器の詳細画面へ飛びます。<br>
+※表示順序は購入年月が古い順に上から表示されます。</div>
   
 </div>

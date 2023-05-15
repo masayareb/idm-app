@@ -26,4 +26,15 @@ class Item < ApplicationRecord
   validates :purchase_date, presence: true
   #y年表示
   validates :years_of_use, presence: true
+
+  #検索機能
+  def self.search(search)
+    if search != ""
+      #機器名・id・S/N・購入年月・
+      Item.where('item LIKE(?) OR id LIKE(?) OR serial_number LIKE(?) OR purchase_date LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
 end

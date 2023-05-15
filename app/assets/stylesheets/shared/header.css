@@ -50,15 +50,10 @@
 }
 
 .search-button {
+  color: white;
   width: 6vh;
   border: 0;
-  cursor: pointer;
-  background-color: #3ccace;
-  padding: 8px;
-}
-
-.search-icon {
-  width: 100%;
+  background-color: rgb(58, 210, 87);
 }
 
 .nav {

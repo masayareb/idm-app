@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index 
     @items = Item.order(purchase_date: :asc)
+
   end
 
   def new
@@ -37,7 +38,8 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
+    @q = Item.ransack(params[:q])
+    @items = @q.result
   end
 
   private

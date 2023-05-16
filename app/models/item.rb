@@ -26,4 +26,5 @@ class Item < ApplicationRecord
   validates :purchase_date, presence: true
   #y年表示
   validates :years_of_use, presence: true
+
 end

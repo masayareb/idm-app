@@ -1,18 +1,15 @@
 <%= render "shared/header" %>
 
-
-
 <div class='item-contents'>
   <div class='item-contents-top'>
     <div class='title-index'>
-      ユーザ管理機器一覧
+      ユーザ管理機器一覧（検索結果）
     </div>
     <div class="item-new-register">
       <%=link_to '新規機器登録', new_item_path,class:'list-hover btn-style' %>
     </div>
   </div>
-  <div class='item-list-supplement'>※機器idをクリックすると機器の詳細画面へ飛びます。<br>
-  ※表示順序は購入年月が古い順に上から表示されます。</div>
+
   <table>
   <thead>
     <tr>
@@ -72,5 +69,7 @@
     <% end %>
   <% end %>
 </table>
+<div class='item-list-supplement'>※機器idをクリックすると機器の詳細画面へ飛びます。<br>
+※表示順序は購入年月が古い順に上から表示されます。</div>
   
 </div>

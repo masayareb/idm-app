@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index,:search ]
   before_action :set_item, only: [:edit, :show, :update]
 
   def index 
     @items = Item.order(purchase_date: :asc)
+
   end
 
   def new
@@ -34,6 +35,11 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def search
+    @q = Item.ransack(params[:q])
+    @items = @q.result
   end
 
   private

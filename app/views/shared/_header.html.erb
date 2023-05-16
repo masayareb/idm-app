@@ -9,19 +9,47 @@
       <div class='title-message'>
         データ保存・通信をする情報機器を管理するアプリ
       </div>
-      <form class="search-form" action="#">
-        <input class='input-box' placeholder='キーワードから探す'>
-        <button class="search-button">
-          <%= image_tag "search.png", class:"search-icon" %>
-        </button>
-      </form>
+
+      <%= search_form_for Item.ransack(params[:q]), url: search_items_path, local: true, html:{class: "search-form"} do |f| %>
+        <%= f.text_field :item_or_serial_number_or_id_cont, placeholder: '機器名・S/Nから検索できます（部分一致）', class: "input-box" %>
+        <%= f.submit "検索", class: "search-button list-hover" %>
     </div>
   </div>
+
   <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list list-hover btn-style" %></li>
-      <li><%= link_to '状態', "#", class: "brand-list list-hover btn-style" %></li>
-    </ul>
+    <div class='lists-left'>
+      <div class='category-list' id='category'>
+        <div class='category-lists list-hover btn-style' id='category-search-btn'>
+          カテゴリー検索
+        </div>
+        <div class='hidden' id='category-pull-down'>
+          <%= f.collection_check_boxes :category_id_in, Category.all, :id, :name do |cb| %>
+            <div class="form-check">
+              <%= cb.check_box %>
+              <%= cb.label %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+        
+      <div class='status-list' id='status'>
+        <div class='status-lists list-hover btn-style' id='status-search-btn'>
+          利用状況検索
+        </div>
+        <div class='hidden' id='status-pull-down'>
+          <%= f.collection_check_boxes :status_id_in, Status.all, :id, :name do |cb| %>
+            <div class="form-check">
+              <%= cb.check_box %>
+              <%= cb.label %>
+            </div>
+          <% end %>
+      <% end %><%#=search_form_forの終了場所%>
+        </div>
+      </div>
+    </div>
+
+
+
     <ul class='lists-right'>
       <% if user_signed_in? %>
         <li><%= link_to current_user.name, edit_user_registration_path, class: "user-name list-hover btn-style" %></li> 

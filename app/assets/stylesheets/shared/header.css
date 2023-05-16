@@ -71,14 +71,22 @@
 
 }
 
-.category-list {
+.category-lists {
   margin-right: 3vw;
 }
+
+.hidden{
+  display: none;
+}
+
+.form-check {
+  display: block;
+}
+
 
 .lists-right {
   display: flex;
   list-style: none;
-  align-items: flex-end;
 }
 
 

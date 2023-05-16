@@ -9,67 +9,13 @@
       <%=link_to '新規機器登録', new_item_path,class:'list-hover btn-style' %>
     </div>
   </div>
+  <div class='item-list-supplement'>※機器idをクリックすると機器の詳細画面へ飛びます。<br>
+  ※表示順序は購入年月が古い順に上から表示されます。</div>
 
   <table>
-  <thead>
-    <tr>
-      <th>機器id</th>
-      <th>利用状況</th>
-      <th>機器種類</th>
-      <th>機器名</th>
-      <th>設置先</th>
-      <th>購入年月</th>
-      <th>利用予定年数</th>
-    </tr>
-  </thead>
-  <% @items.each do |item| %>
-    <% if user_signed_in? && current_user.id == item.user_id %>
-  <tbody>
-    <tr>
-      <td>
-          <%= link_to item_path(item.id) do %>
-          <div class='item-id list-hover'>
-            <%= item.id %>
-          </div>
-          <% end %>
-        </div>
-      </td>
-      <td>
-        <div class='item-status'>
-          <%= item.status.name %>
-        </div>
-      </td>
-      <td>
-        <div class='item-category'>
-          <%= item.category.name %>
-        </div>
-      </td>
-      <td>
-        <div class='item-name'>
-          <%= item.item %>
-        </div>
-      </td>
-      <td>
-        <div class='item-affiliation'>
-          <%= item.user.affiliation %>
-        </div>
-      </td>
-      <td>
-        <div class='item-purchase-date'>
-          <%= item.purchase_date %>
-        </div>
-      </td>
-      <td>
-        <div class='item-years-of-use'>
-          <%= item.years_of_use %>
-        </div>
-      </td>
-    </tr>
-  </tbody>
+    <%= render "shared/index-list-header" %>
+    <% @items.each do |item| %>
+      <%= render partial: "shared/index-list", locals:{item: item } %>
     <% end %>
-  <% end %>
-</table>
-<div class='item-list-supplement'>※機器idをクリックすると機器の詳細画面へ飛びます。<br>
-※表示順序は購入年月が古い順に上から表示されます。</div>
-  
+  </table>
 </div>

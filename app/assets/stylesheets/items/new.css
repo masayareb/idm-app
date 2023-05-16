@@ -99,6 +99,7 @@
 .input-btn-contents {
   width: 100%;
   text-align: center;
+  margin-top: 10px;
 }
 
 .input-btn {
@@ -108,14 +109,13 @@
   width: 50%;
   height: 50px;
   font-size: 14px;
-  margin-bottom: 4vh;
 }
 
 .back-btn {
   background: #aaa;
   border: 1px solid #aaa;
   color: #fff;
-  padding: 15px 23%;
+  padding: 15px 10%;
   text-decoration: none;
 }
 

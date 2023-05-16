@@ -1,0 +1,44 @@
+<% if user_signed_in? && current_user.id == item.user_id %>
+  <tbody>
+    <tr>
+      <td>
+          <%= link_to item_path(item.id) do %>
+          <div class='item-id list-hover'>
+            <%= item.id %>
+          </div>
+          <% end %>
+        </div>
+      </td>
+      <td>
+        <div class='item-status'>
+          <%= item.status.name %>
+        </div>
+      </td>
+      <td>
+        <div class='item-category'>
+          <%= item.category.name %>
+        </div>
+      </td>
+      <td>
+        <div class='item-name'>
+          <%= item.item %>
+        </div>
+      </td>
+      <td>
+        <div class='item-affiliation'>
+          <%= item.user.affiliation %>
+        </div>
+      </td>
+      <td>
+        <div class='item-purchase-date'>
+          <%= item.purchase_date %>
+        </div>
+      </td>
+      <td>
+        <div class='item-years-of-use'>
+          <%= item.years_of_use %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+<% end %>

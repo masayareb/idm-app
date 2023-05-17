@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -20,6 +19,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    # @item.destroy
+    # redirect_to root_path
   end
 
   private

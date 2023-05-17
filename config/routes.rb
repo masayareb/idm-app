@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/edit'
-  get 'users/update'
-  get 'users/destroy'
   devise_for :users
-  resources :users
+  resources :users, except: [:show]
   resources :items do
     collection do
       get 'search'

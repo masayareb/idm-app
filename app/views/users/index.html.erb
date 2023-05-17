@@ -1,2 +1,25 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Users</h1>
+<table>
+	<thead>
+		<tr>
+ 			<th>操作</th>    
+ 			<th>社員番号</th>
+			<th>名前</th>
+			<th>Email</th>
+			<th>所属</th>
+			<th>管理者</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+      <tr>
+        <td><%= link_to "編集する", users_edit_path(user.id) %></td>
+        <td><%= user.employee_number %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.affiliation %></td>
+        <td><%= user.admin %></td>
+      </tr>
+    <% end %>
+	</tbody>
+</table>

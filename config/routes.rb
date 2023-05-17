@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/update'
   get 'users/destroy'
   devise_for :users
+  resources :users
   resources :items do
     collection do
       get 'search'

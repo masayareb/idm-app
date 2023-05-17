@@ -15,7 +15,13 @@
   <table>
     <%= render "shared/index-list-header" %>
     <% @items.each do |item| %>
-      <%= render partial: "shared/index-list", locals:{item: item } %>
+      <% if  current_user&.admin?%>
+        <%= render partial: "shared/index-list", locals:{item: item } %>
+      <% else %>
+        <% if user_signed_in? && current_user.id == item.user_id %>
+          <%= render partial: "shared/index-list", locals:{item: item } %>
+        <% end %>
+      <% end %>
     <% end %>
   </table>
 </div>

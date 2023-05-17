@@ -1,0 +1,21 @@
+
+
+.admin-user-contents {
+  background-color: #FFF;
+  width: 100vw;
+  padding: 2vh 15vw;
+}
+
+.admin-user-contents-top{
+  display: flex;
+  justify-content: space-between;
+  font-size: 3vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.title-index{
+  padding: 1vh 1vw;
+}
+
+

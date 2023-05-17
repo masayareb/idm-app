@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
 
   def index 
     @items = Item.order(purchase_date: :asc)
-
   end
 
   def new
@@ -24,7 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if @item.user_id != current_user.id
+    unless @item.user_id == current_user.id || current_user&.admin?
       redirect_to root_path
     end
   end

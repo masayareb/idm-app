@@ -62,7 +62,7 @@
     
     <div class='item-show-supplement'>※設置場所についてはユーザの所属をご変更ください</div>
 
-    <% if user_signed_in? && current_user.id == @item.user_id %>
+    <% if user_signed_in? && current_user.id == @item.user_id || current_user&.admin?%>
       <%= link_to "機器情報の編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
       <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
     <% end %>

@@ -1,7 +1,17 @@
-<%= form_with model: @item, local: true do |f| %>
+<%= form_with model:@item, local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="new-items">
     <div class="weight-bold-text">【入力項目】</div>
+
+    <div class="items-input-contents">
+      <div class="weight-bold-text">
+        社員番号
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :employee_number, class:"input-default", id:"employee_number", placeholder:"例) 1234", maxlength:"20"  %>
+    </div>
+
+
     <div class="items-input-contents">
       <div class="weight-bold-text">
         状態

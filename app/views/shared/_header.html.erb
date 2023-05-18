@@ -11,7 +11,8 @@
       </div>
 
       <%= search_form_for Item.ransack(params[:q]), url: search_items_path, local: true, html:{class: "search-form"} do |f| %>
-        <%= f.text_field :item_or_serial_number_or_id_cont, placeholder: '機器名・S/Nから検索できます（部分一致）', class: "input-box" %>
+        <%= f.text_field :item_or_serial_number_or_user_name_cont, placeholder: '機器名・S/N・所有者名検索（部分一致）', class: "input-box" %>
+        <%= f.number_field :id_eq, placeholder: '機器id検索（完全一致）', class: "input-box" %>
         <%= f.submit "検索", class: "search-button list-hover" %>
     </div>
   </div>

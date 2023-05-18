@@ -10,32 +10,32 @@
         <td><%= @item.id %></td>
       </tr>
       <tr>
-        <th>設置場所</th>
+        <th>状態</th>
+        <td><%= @item.status.name %></td>
+      </tr>
+      <tr>
+        <th>所属</th>
         <td><%= @item.user.affiliation %></td>
+      </tr>
+      <tr>
+        <th>機器種類</th>
+        <td><%= @item.category.name %></td>
       </tr>
       <tr>
         <th>機器名</th>
         <td><%= @item.item %></td>
-      </tr>
-        <tr>
-        <th>カテゴリ</th>
-        <td><%= @item.category.name %></td>
-      </tr>
-      <tr>
-        <th>ステータス</th>
-        <td><%= @item.status.name %></td>
       </tr>
       <tr>
         <th>メーカー</th>
         <td><%= @item.manufacturer %></td>
       </tr>
       <tr>
-        <th>S/N</th>
-        <td><%= @item.serial_number %></td>
-      </tr>
-      <tr>
         <th>IPアドレス</th>
         <td><%= @item.ip %></td>
+      </tr>
+      <tr>
+        <th>S/N</th>
+        <td><%= @item.serial_number %></td>
       </tr>
       <tr>
         <th>購入年月</th>

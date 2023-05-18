@@ -12,7 +12,7 @@
 
     <div class="items-input-contents">
       <div class="weight-bold-text">
-        カテゴリー
+        機器種類
         <span class="indispensable">必須</span>
       </div>
       <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
@@ -20,7 +20,7 @@
 
     <div class="items-input-contents">
       <div class="weight-bold-text">
-        商品名
+        機器名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_field :item, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
@@ -29,7 +29,7 @@
 
     <div class="items-input-contents">
       <div class="weight-bold-text">
-        メーカー名
+        メーカー
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_field :manufacturer, class:"items-text", id:"item-manufacturer", placeholder:"DELL,HPなど" ,maxlength:"30" %>

@@ -179,10 +179,10 @@ https://docs.google.com/spreadsheets/d/1iJahYlXnsDaQsLCb23EwTnltDe-ZBCcebwMO7rQk
 
 # 開発環境
 ・フロントエンド：HTML,CSS,Javascript<br>
-・バックエンド：Ruby(ruby on rails)<br>
+・バックエンド：Ruby(ruby on rails),MySQL<br>
 ・インフラ：render<br>
 ・テスト：rspec<br>
-・テキストエディター：VSコード<br>
+・テキストエディター：Visual Studio Code<br>
 ・タスク管理：GitHub,Notion
 
 # 工夫したポイント

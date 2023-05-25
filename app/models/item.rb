@@ -21,10 +21,11 @@ class Item < ApplicationRecord
   #S/N英数字のみ
   validates :serial_number, presence: true,uniqueness: true, format: { with: /\A[A-Za-z0-9]+\z/ }
   #192.168.000.000形式もしくはDHCP
-  validates :ip, presence: true, format: { with: Resolv::IPv4::Regex }
+  validates :ip, presence: true, format: { with: /\A(?:DHCP|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\z/ }
   #yyyy-mm-dd形式
   validates :purchase_date, presence: true
   #y年表示
   validates :years_of_use, presence: true
+
 
 end

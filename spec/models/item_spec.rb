@@ -80,8 +80,14 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Ip can't be blank")
       end
 
-      it "ipがxxx.xxx.xxx.xxx形式でないと登録できない" do
+      it "ipがDHCPもしくはxxx.xxx.xxx.xxx形式でないと登録できない（IPアド）" do
         @item.ip = '192.168.000'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Ip is invalid")
+      end
+
+      it "ipがDHCPもしくはxxx.xxx.xxx.xxx形式でないと登録できない（DHCP）" do
+        @item.ip = 'DHC'
         @item.valid?
         expect(@item.errors.full_messages).to include("Ip is invalid")
       end

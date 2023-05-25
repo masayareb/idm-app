@@ -17,6 +17,7 @@ https://idm-app.onrender.com
 ・一般ユーザパスワード：Testuser1<br>
 ・管理者ユーザメールアドレス：admin-user@xxx.co.jp<br>
 ・管理者ユーザパスワード：Adminuser1<br>
+※社員番号は0001~0005まで作成。一般ユーザ(田中 太郎)は0001にて設定
 
 # 利用方法
 ## 情報機器登録登録

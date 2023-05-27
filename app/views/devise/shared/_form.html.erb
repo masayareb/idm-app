@@ -1,0 +1,46 @@
+<div class='form-text-wrap'>
+  <label class="form-text">名前</label>
+  <span class="indispensable">必須</span>
+</div>
+<%= f.text_area :name, class:"input-default", id:"user-name", placeholder:"例) 山田 太郎", maxlength:"40" %>
+<span id="user-name-error" class="error-message"></span>
+
+<div class='form-text-wrap'>
+  <label class="form-text">社員番号</label>
+  <span class="indispensable">必須</span>
+</div>
+<%= f.text_field :employee_number, class:"input-default", id:"user-employee-number", placeholder:"例) 1234", maxlength:"20" %>
+<span id="user-employee-number-error" class="error-message"></span>
+
+<div class='form-text-wrap'>
+  <label class="form-text">所属</label>
+  <span class="indispensable">必須</span>
+</div>
+<%= f.text_field :affiliation, class:"input-default", id:"user-affiliation", placeholder:"例) 福岡支社", maxlength:"40" %>
+<span id="user-affiliation-error" class="error-message"></span>
+
+<div class='form-text-wrap'>
+  <label class="form-text">メールアドレス</label>
+  <span class="indispensable">必須</span>
+</div>
+<%= f.email_field :email, class:"input-default", id:"user-email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+<span id="user-email-error" class="error-message"></span>
+
+<div class='form-text-wrap'>
+  <label class="form-text">パスワード</label>
+  <span class="indispensable">必須</span>
+</div>
+<%= f.password_field :password, class:"input-default", id:"user-password", placeholder:"6文字以上12文字以内の半角英数字" %>
+<span id="user-password-error" class="error-message"></span>
+<p class='info-text'>※小文字大文字英字と数字を含めて設定してください</p>
+
+<div class='form-text-wrap'>
+  <label class="form-text">パスワード(確認)</label>
+  <span class="indispensable">必須</span>
+</div>
+<%= f.password_field :password_confirmation, class:"input-default", id:"user-password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+<span id="user-password-confirmation-error" class="error-message"></span>
+
+<div class='register-btn new-user-register-btn'>
+  <%= f.submit "登録" ,id:'user-submit-button',disabled: true,class:"register-red-btn" %>
+</div>

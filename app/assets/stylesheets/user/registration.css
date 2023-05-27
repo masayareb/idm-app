@@ -29,7 +29,7 @@
 
 .register-red-btn {
   width: 100%;
-  background: rgb(58, 210, 87);
+  background: rgba(58, 210, 87,0.5);
   border: 1px solid rgb(58, 210, 87);
   color: #fff;
   line-height: 48px;

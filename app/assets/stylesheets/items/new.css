@@ -94,6 +94,9 @@
   margin: 2vh 0;
 }
 
+.error-message{
+  padding-left: 5px;
+}
 
 /* 下部ボタン */
 .input-btn-contents {
@@ -119,4 +122,7 @@
   text-decoration: none;
 }
 
+#submit-button{
+  background-color: rgba(58, 210, 87,0.5)
+}
 

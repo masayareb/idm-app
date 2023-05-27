@@ -1,6 +1,6 @@
 <%= render "shared/second-header" %>
 
-<%= form_with model: @user,url: registration_path(current_user),class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user,url: registration_path(current_user),id: 'user-edit-form' ,class: 'registration-main', local: true do |f| %>
 
   <%= devise_error_messages! %>
 
@@ -8,24 +8,28 @@
     <h2 class='edit-user-title'>ユーザ情報変更画面</h2>
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email,class:"input-default", autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email,id:"user-edit-email" ,class:"input-default", autofocus: true, autocomplete: "email" %>
+      <span id="user-edit-email-error" class="error-message"></span>
     </div>
     <div class="field">
       <%= f.label :名前 %><br />
-      <%= f.text_area :name, class:"input-text", id:"name", placeholder:"例) 山田 太郎", maxlength:"40" %>
+      <%= f.text_area :name, class:"input-text", id:"user-edit-name", placeholder:"例) 山田 太郎", maxlength:"40" %>
+      <span id="user-edit-name-error" class="error-message"></span>
     </div>
     <div class="field">
       <%= f.label :所属 %><br />
-      <%= f.text_area :affiliation, class:"input-text", id:"affiliation", placeholder:"例) 福岡支社", maxlength:"40"  %>
+      <%= f.text_area :affiliation, class:"input-text", id:"user-edit-affiliation", placeholder:"例) 福岡支社", maxlength:"40"  %>
+      <span id="user-edit-affiliation-error" class="error-message"></span>
     </div>
 
     <div class="field">
       <%= f.label :現在のパスワード %><br />
-      <%= f.password_field :current_password, class:"input-default", autocomplete: "current-password" %>
+      <%= f.password_field :current_password,id:"user-edit-password", class:"input-default", autocomplete: "current-password" %>
+      <span id="user-edit-password-error" class="error-message"></span>
     </div>
 
     <div class='register-btn'>
-      <%= f.submit "更新", class:"register-red-btn"%>
+      <%= f.submit "更新",id:"user-submit-button", class:"register-red-btn"%>
     </div>
 
   </div>

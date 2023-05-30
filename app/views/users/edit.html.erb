@@ -1,6 +1,6 @@
 <%= render "shared/second-header" %>
 
-<%= form_with model: @user,url: user_path(@user.id),class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user,url: user_path(@user.id),id:'admin-edit-form' ,class: 'registration-main', local: true do |f| %>
 
   <%= render 'shared/error_messages', model: f.object %>
 
@@ -9,21 +9,25 @@
 
     <div class="field">
       <%= f.label :email %><span class="indispensable">必須</span><br />
-      <%= f.email_field :email,class:"input-default", autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email,id:"admin-edit-email",class:"input-default", autofocus: true, autocomplete: "email" %>
+      <span id="admin-edit-email-error" class="error-message"></span>
     </div>
 
     <div class="field">
       <%= f.label :社員番号 %><span class="indispensable">必須</span><br />
-      <%= f.text_field :employee_number, class:"input-default", id:"employee_number", placeholder:"例) 1234", maxlength:"20" %>
+      <%= f.text_field :employee_number,id:"admin-edit-employee-number", class:"input-default", placeholder:"例) 1234", maxlength:"20" %>
+      <span id="admin-edit-employee-number-error" class="error-message"></span>
     </div>
 
     <div class="field">
       <%= f.label :名前 %><span class="indispensable">必須</span><br />
-      <%= f.text_area :name, class:"input-text", id:"name", placeholder:"例) 山田 太郎", maxlength:"40" %>
+      <%= f.text_area :name, id:"admin-edit-name", class:"input-text", placeholder:"例) 山田 太郎", maxlength:"40" %>
+      <span id="admin-edit-name-error" class="error-message"></span>
     </div>
     <div class="field">
       <%= f.label :所属 %><span class="indispensable">必須</span><br />
-      <%= f.text_area :affiliation, class:"input-text", id:"affiliation", placeholder:"例) 福岡支社", maxlength:"40"  %>
+      <%= f.text_area :affiliation, id:"admin-edit-affiliation", class:"input-text", placeholder:"例) 福岡支社", maxlength:"40"  %>
+      <span id="admin-edit-affiliation-error" class="error-message"></span>
     </div>
 
     <div class="field">
@@ -33,7 +37,7 @@
 
     <div>
       <div class='register-btn'>
-        <%= f.submit "更新", class:"register-red-btn"%>
+        <%= f.submit "更新",id: "admin-submit-button", class:"register-red-btn"%>
       </div>
 
       <div class="input-btn-contents">

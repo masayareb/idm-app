@@ -11,7 +11,7 @@
       <% if @item.new_record? %><%#新規登録の時はカレントユーザの社員番号を初期値として設定%>
         <%= f.text_field :employee_number, value: current_user.employee_number , class:"items-text", id:"employee-number", placeholder:"例) 1234", maxlength:"20"  %>
       <% else %> <%#編集の時は登録されているユーザの社員番号を初期値として設定%>
-        <%= f.text_field :employee_number, value: @item.user.employee_number , class:"items-text", id:"employee-number", placeholder:"例) 1234", maxlength:"20"  %>
+        <%= f.text_field :employee_number, value: @employee_number , class:"items-text", id:"employee-number", placeholder:"例) 1234", maxlength:"20"  %>
       <% end %>
       <span id="employee-number-error" class="error-message"></span>
     </div>

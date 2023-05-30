@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
 
   
   def edit
+    @employee_number = @item.user.employee_number
     unless @item.user_id == current_user.id || current_user&.admin?
       redirect_to root_path
     end

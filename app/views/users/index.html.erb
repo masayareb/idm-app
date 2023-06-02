@@ -4,6 +4,7 @@
   <div class='admin-user-contents-top'>
     ユーザ一覧
   </div>
+  <%= link_to "csv出力", data_exports_user_export_csv_path(format: :csv) ,class:'list-hover btn-style'%>
   
   <table>
     <thead>

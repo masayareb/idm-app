@@ -6,6 +6,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  
+  get 'data_exports/export_csv'
   root to: "items#index"
 end

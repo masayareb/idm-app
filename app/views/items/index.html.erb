@@ -6,7 +6,9 @@
       ユーザ管理機器一覧
     </div>
     <div class="item-new-register">
-      <%= link_to "csv出力", data_exports_export_csv_path(format: :csv) ,class:'list-hover btn-style'%>
+      <% if user_signed_in? %>
+        <%= link_to "csv出力", data_exports_export_csv_path(format: :csv) ,class:'list-hover btn-style'%>
+      <% end %>
       <%=link_to '新規機器登録', new_item_path,class:'list-hover btn-style' %>
     </div>
   </div>

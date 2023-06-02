@@ -46,6 +46,13 @@ https://idm-app.onrender.com
   選択ボックスが表示され、キーワードを選択するし検索ボタンを押すとそのキーワードに該当する機器を表示させる<br>
 ※2,3は重複で検索ができる。例えば、デスクトップ+所有者名といった検索が可能
 
+## CSV出力機能
+1.トップページのcsv出力ボタンから機器一覧に表示されている機器情報をcsv出力可能<br>
+2.通常ユーザは、所有している機器、管理者ユーザは全ての機器をcsv出力できる<br>
+3.管理者ユーザは、ユーザ一覧からユーザ情報もcsv出力出来る<br>
+※ログインしていないユーザは、csv出力ボタンが表示されない。機器が1つもない場合は、headerだけ表示されたcsvファイルが出力される
+
+
 # アプリケーションを作成した背景
 私自身が情報機器の管理業務に携わる中で、人事異動に伴う情報の変更であったり、<br>
 特に、定期的な機器の現物調査で遠方の事業所の調査に手間と時間が掛かるという経験があった。<br>
@@ -100,10 +107,16 @@ https://docs.google.com/spreadsheets/d/1iJahYlXnsDaQsLCb23EwTnltDe-ZBCcebwMO7rQk
   gif:(https://github.com/masayareb/idm-app/assets/121111710/d18eeabb-b9b7-4722-be6f-70a67008aabc)<br>
       (https://github.com/masayareb/idm-app/assets/121111710/4ca05a3d-43e6-4c39-98a1-dd27da2b7d59)<br>
   ・登録されている機器から該当の機器を検索することが出来る
+
+## CSV出力機能(2023/6/2機能追加)
+  gif:(https://github.com/masayareb/idm-app/assets/121111710/7ea3d7cc-8500-453d-8e49-d81a1378d7cf)
+      (https://github.com/masayareb/idm-app/assets/121111710/38a75854-459c-4f5f-97cd-8592785d8b72)
+  ・ユーザが所有している機器情報をcsv出力することができる。
+  ・管理者は全機器、前ユーザ情報を出力することができる
   
 
 # 実装予定の機能
-・CSV入出力機能<br>
+・CSV入力機能<br>
 ・変更履歴管理機能<br>
 ・メール通知機能
 

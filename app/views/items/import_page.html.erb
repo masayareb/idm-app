@@ -1,0 +1,38 @@
+<%= render "shared/second-header" %>
+
+<div class = "csv-import">
+  <div class="title-csv-import">情報機器 csv-import</div>
+  <p>ファイルには以下の項目が必要です<br>
+      id,状態,機器種類,機器名,メーカー名,社員番号,S/N,IPアドレス,購入年月,利用予定年数,備考<br>
+  </p>
+
+  <div>
+    <% if flash[:alert].present? %>
+      <% flash[:alert].each do |message| %>
+        <div class="alert alert-danger">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <div>
+  <%= form_tag import_items_path, multipart: true do %>
+    <%= file_field_tag :file ,id: 'csv-file-input', class:'list-hover btn-style' %>
+    <%= submit_tag "インポート", class:'list-hover btn-style' %>
+  <% end %>
+  </div>
+
+  <div class = "preview-form">
+    <div id="csv-preview"></div>
+  </div>
+
+  <div>
+    <p>【注意】<br>
+      状態、機器種類については対象の番号で記述ください<br>
+      入力条件に合わない場合は取込みに失敗してエラーを吐きます<br>
+      csv出力ファイルは項目を網羅しており、取込みフォーマットとしてご利用頂けます
+    </p>
+  </div>
+
+</div>

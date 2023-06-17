@@ -8,10 +8,14 @@
     <div class="item-new-register">
       <% if user_signed_in? %>
         <%= link_to "csv出力", data_exports_export_csv_path(format: :csv) ,class:'list-hover btn-style'%>
+        <% if  current_user&.admin?%>
+          <%= link_to "csv入力", import_page_items_path ,class:'list-hover btn-style'%>
+        <% end %>
       <% end %>
       <%=link_to '新規機器登録', new_item_path,class:'list-hover btn-style' %>
     </div>
   </div>
+
   <div class='item-list-supplement'>※機器idをクリックすると機器の詳細画面へ飛びます。<br>
   ※表示順序は購入年月が古い順に上から表示されます。</div>
 

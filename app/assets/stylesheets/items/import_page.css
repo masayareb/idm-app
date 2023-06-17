@@ -1,0 +1,36 @@
+.csv-import {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.title-csv-import{
+  padding: 1vh 1vw;
+  font-size: 3vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.item-box {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 5vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert{
+  padding: 1vh 1vw;
+  background-color: burlywood;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.preview-form{
+  margin-bottom: 5vh;
+}

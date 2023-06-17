@@ -35,13 +35,15 @@ class DataExportsController < ApplicationController
   # 出力する機器情報
   def send_items_csv(items)
     csv_data = CSV.generate do |csv|
-      column_names = ["id","状態","機器種類","機器名","メーカー名","社員番号","ユーザ名","所属","S/N","IPアドレス","購入年月","利用予定年数","備考","レコード作成日","レコード更新日"]
+      column_names = ["id","状態","状態名","機器種類","機器種類名","機器名","メーカー名","社員番号","ユーザ名","所属","S/N","IPアドレス","購入年月","利用予定年数","備考","レコード作成日","レコード更新日"]
       csv << column_names
 
       items.each do |item|
         column_values = [
           item.id,
+          item.status.id,
           item.status.name,
+          item.category.id,
           item.category.name,
           item.item,
           item.manufacturer,

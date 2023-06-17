@@ -1,6 +1,9 @@
+require 'csv'
+
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index,:search ]
   before_action :set_item, only: [:edit, :show, :update]
+  before_action :check_admin, only: [:import, :import_page]
 
   def index 
     @items = Item.order(purchase_date: :asc)
@@ -45,9 +48,20 @@ class ItemsController < ApplicationController
     end
   end
 
+
   def search
     @q = Item.ransack(params[:q])
     @items = @q.result
+  end
+
+  #csv取り込み
+  def import
+    # fileはtmpに自動で一時保存される
+    flash[:alert] = Item.import(params[:file])
+    redirect_to import_page_items_path
+  end
+
+  def import_page
   end
 
   private
@@ -58,6 +72,12 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def check_admin
+    unless current_user&.admin?
+      redirect_to root_path
+    end
   end
 
   

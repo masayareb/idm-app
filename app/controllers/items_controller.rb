@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   before_action :check_admin, only: [:import, :import_page]
 
   def index 
-    @items = Item.order(purchase_date: :asc)
+    @items = Item.order(id: "DESC")
   end
 
   def new
